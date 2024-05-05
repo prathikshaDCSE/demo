@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Archivo:wght@700&display-swap');
+
+    body {
+        font-family: 'Archivo', sans-serif;
+    }
+</style>
+
+<body class="bg-slate-600">
+
+    <div class="h-screen flex justify-center items-center">
+
+        <div class="border p-4 rounded-md bg-slate-100 shadow-md">
+
+            <input type="text" class="border border-slate-300 p-3 my-4 bg-slate-100 rounded-md w-full sm:w-80 text-right h-20 shadow-sm focus:outline-none font-bold"
+                id="display" readonly>
+            <div class="flex items-center justify-between font-bold">
+
+                <button class="border shadow-md w-14 h-14 rounded-md my-2 bg-red-400 text-white bg-red-500 sm:w-[9rem]" onclick="clearDisplay()">C</button>
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendOperator('%')">%</button>
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendOperator('/')">/</button>
+            </div>
+
+            <div class="flex items-center justify-between font-bold">
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendNumber('7')">7</button>
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendNumber('8')">8</button>
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendNumber('9')">9</button>
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendOperator('*')">*</button>
+            </div>
+
+            <div class="flex items-center justify-between font-bold">
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendNumber('4')">4</button>
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendNumber('5')">5</button>
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendNumber('6')">6</button>
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendOperator('-')">-</button>
+            </div>
+
+            <div class="flex items-center justify-between font-bold">
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendNumber('1')">1</button>
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendNumber('2')">2</button>
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendNumber('3')">3</button>
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendOperator('+')">+</button>
+            </div>
+
+            <div class="flex items-center justify-between font-bold">
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendNumber('0')">0</button>
+                <button class="border bg-white shadow-md w-14 h-14 rounded-md my-2 hover:bg-slate-300" onclick="appendOperator('.')">.</button>
+                <button class="border bg-slate-900 text-white hover:bg-slate-600 shadow-md w-full sm:w-[9rem] h-14 rounded-md my-2" onclick="calculate()">Enter</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="j.js"></script>
+
+</html>
